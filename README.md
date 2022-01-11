@@ -1,3 +1,7 @@
+# Title
+
+Sample CRUD application - Angular
+
 # Setup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2. Re/place the [src] folder under any existing / fresh newly created angular project to have it work.
