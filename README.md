@@ -8,14 +8,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Some more info
 
+Created Login Page to have User/password to input authenticated by manual using [AuthGaurd] – can Activate guard [true / false]. 
+On the successful login  redirected to the route [‘/main’] to display material-tab 
+Used the fake Service - https://jsonplaceholder.cypress.io/ available at internet for the operation of CRUD – Employee addition/edit/delete.
+
 Angular CLI: 12.0.5
 Node: 16.13.1
 Package Manager: npm 8.1.2
 OS: win32 x64
-
-Angular: 12.0.5
-... animations, cli, common, compiler, compiler-cli, core, forms
-... platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
