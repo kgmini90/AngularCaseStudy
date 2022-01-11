@@ -1,0 +1,28 @@
+<div style="min-height: 70%; margin-right: 240px;" class="flexLayout" >
+
+  <div class="loginBox">
+    <div class="veryDark">
+      <h1 style="margin-top: 20px">Login</h1>
+    </div>
+
+    <div fxLayout="column" fxLayout.sm="column" fxLayoutAlign="space-between center" fxLayout-wrap>
+      <div class="row dark">
+        <label>UserName:</label>
+        <input type="text" [(ngModel)]="username">
+      </div>
+      <div class="row dark">
+        <label>Password:</label>
+        <input type="password" [(ngModel)]="password">
+      </div>
+    </div>
+
+    <div class="row">
+      <button mat-raised-button (click)="login()">Submit</button>
+      <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- <div>
+    <h1>Login Comp</h1>
+  </div> -->
+</div>

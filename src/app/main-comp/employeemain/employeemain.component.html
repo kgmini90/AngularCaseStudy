@@ -1,0 +1,77 @@
+<div class="mainText">
+
+  <div>
+  <mat-card class="card-container">
+    <mat-card-title> Employee list </mat-card-title>
+    <mat-card-title> <td><button class="addButton" mat-button color="primary" (click)="addData()"> add </button> </td> </mat-card-title>
+  </mat-card>
+
+
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell style="max-width: 5%" *matHeaderCellDef> ID. </mat-header-cell>
+        <mat-cell style="max-width: 5%" *matCellDef="let element" (click)="$event.stopPropagation()">
+          <span (click)="editData(element)">{{element.id}} </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell style="max-width: 20%" *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell style="max-width: 20%"  *matCellDef="let element" (click)="$event.stopPropagation()">
+          <span (click)="editData(element)">{{element.name}} </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <mat-header-cell style="max-width: 10%" *matHeaderCellDef> User Name </mat-header-cell>
+        <mat-cell style="max-width: 10%" *matCellDef="let element">
+          <span (click)="editData(element)">{{element.username}} </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <span (click)="editData(element)">{{element.email}} </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="editColumn">
+        <mat-header-cell style="max-width: 8%;" *matHeaderCellDef> </mat-header-cell>
+        <mat-cell style="max-width: 8%; justify-content: flex-end;" *matCellDef="let element">
+            <button (click)="editData(element)" mat-button> Edit </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="deleteColumn">
+        <mat-header-cell style="max-width: 8%;" *matHeaderCellDef> </mat-header-cell>
+        <mat-cell style="max-width: 8%; justify-content: flex-end;" *matCellDef="let element">
+            <button>
+              <mat-icon (click)="deleteData(element)">delete</mat-icon>
+            </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+
+    </mat-table>
+
+
+    <mat-paginator [length]="105"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+      </mat-paginator>
+
+  </div>
+  </div>
+</div>

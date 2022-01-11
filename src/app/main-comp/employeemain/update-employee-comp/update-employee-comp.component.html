@@ -1,0 +1,62 @@
+
+  <h1>Employee Entries!</h1>
+  <div class="example-container">
+    <form class="example-container" [formGroup]="userValidations">
+      <mat-form-field>
+        <mat-label>
+          Enter User ID:
+        </mat-label>
+        <input matInput formControlName="id"
+                type="text"
+                placeholder="ID">
+
+        <mat-error *ngIf="userValidations.get('id')?.hasError">
+          ID is Required!
+        </mat-error>
+
+      </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Enter Name:
+          </mat-label>
+          <input matInput formControlName="name"
+                  type="text"
+                  placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Enter User Name:
+          </mat-label>
+          <input matInput formControlName="username"
+                  type="text"
+                  placeholder="User Name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Enter Email address:
+          </mat-label>
+          <input matInput formControlName="email"
+                  type="text"
+                  placeholder="Email">
+        </mat-form-field>
+
+
+
+
+    </form>
+
+    <!-- <div class="button-container" style="min-height: 10%" >
+      <div><button mat-raised-button color="primary" [disabled]="!userValidations.valid">Create</button></div>
+      <div><button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button></div>
+    </div> -->
+
+    <div>
+
+      <div class="button-container" style="min-height: 10%" >
+      <div><button (click)="updateEmployee()" [disabled]="!userValidations.valid">Update</button></div>
+      <div><button (click)="onCancel()">Cancel</button></div>
+      </div>
+    </div>
+
+  </div>
+
